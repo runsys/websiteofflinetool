@@ -1,0 +1,210 @@
+full head name:
+website
+local directory
+regex for download include path
+regex for download exclude path
+thread count
+state
+waiting second
+continue downloading second
+regex for refresh url
+interval for continue download URL
+interval for download URL rest
+UserAgent
+login link
+ligin post data
+regex for login success
+suffix for include url
+relink to local when 1
+regex for no download file exists URL
+save to rockdb
+head match when don't exists
+page match when don't exists
+page timeout
+URL extract regex 1
+group URL regex replacement 1
+group URL time replacement 1
+group URL title replacement 1
+task state after extract 1
+URL extract regex 2
+group URL regex replacement 2
+group URL time replacement 2
+group URL title replacement 2
+task state after extract 2
+Page Gate server list
+regex for match Page Gate extract URL 1
+Page Gate Script 1
+regex for match Page Gate extract URL 2
+PageGateScript2 Page Gate Script 2
+URL match for ContentDisposition exclude value is exclude name list file
+regex for page completeness URL 1
+regex for completeness of url's content 1
+regex for page completeness URL 2
+regex for completeness of url's content 2
+regex for multi host URL
+multi replacement for rand host
+regex for none multi host URL
+big file download type(1 for segment save,2 for file buffer save)
+state code by regex(regex`state code;...)
+spider url regex rule(segment regex`url replacement`time replacement`titl replacement`state code;...)
+auto urls tyle(1 for forbid auto;2 for to local;3 for tolocal auto;4 for to net;5 for to net auto)
+replace for url(regex`replacement;...)
+max size limit for memory download
+
+
+operate tip: 
+mult home url can seperate by ';';
+[regex] prefix means regex otherwise direct search;
+home url head can be a url list file;
+home url include [number-number] means serail url;
+[meta] prefix can be filter for Content-Type like;
+URL match suffix have * start will not modify;
+format [extension]URL regex expression;   
+standard PageGate spider data format:url group:UrlSet(`seperator);
+url time:UrlTimeSet;url title:UrlTitleSet;url body:PageBody;save as data:SaveAsData;other save to pagedata;PageGateScript1 __url__ for replacement;
+URL match for state code by write order;
+exclude download url can to define max size limit default 300MB;
+__cururl__ can express current page url;
+net address prefix "-" mean don't init, "--" mean don't init all;
+self defined crawl url now() can be express now;
+
+inner define error code:
+901:content size great than max download limit.;
+903:meta filter not pass;
+904:not eixsts pass.;
+905:page not eixsts pass.;
+906:page gate's server list is empty;
+907:page gate's return is too big;
+908:page gate's return html is empty;
+909:page gate's error unknow;
+911:exclude by file filter disposition-content;
+912:multi host found url failed;
+913:head is empty;914:codec not found;
+915:head size is 0; conent size is not 0;
+916:conent size less than head size;
+917:conent size great than head size;
+918:full content not match;
+919:compress error;
+
+CURL Error Code Without Prefix 8:
+  CURLE_UNSUPPORTED_PROTOCOL,    /* 1 */
+  CURLE_FAILED_INIT,             /* 2 */
+  CURLE_URL_MALFORMAT,           /* 3 */
+  CURLE_NOT_BUILT_IN,            /* 4 - [was obsoleted in August 2007 for
+                                    7.17.0, reused in April 2011 for 7.21.5] */
+  CURLE_COULDNT_RESOLVE_PROXY,   /* 5 */
+  CURLE_COULDNT_RESOLVE_HOST,    /* 6 */
+  CURLE_COULDNT_CONNECT,         /* 7 */
+  CURLE_FTP_WEIRD_SERVER_REPLY,  /* 8 */
+  CURLE_REMOTE_ACCESS_DENIED,    /* 9 a service was denied by the server
+                                    due to lack of access - when login fails
+                                    this is not returned. */
+  CURLE_FTP_ACCEPT_FAILED,       /* 10 - [was obsoleted in April 2006 for
+                                    7.15.4, reused in Dec 2011 for 7.24.0]*/
+  CURLE_FTP_WEIRD_PASS_REPLY,    /* 11 */
+  CURLE_FTP_ACCEPT_TIMEOUT,      /* 12 - timeout occurred accepting server
+                                    [was obsoleted in August 2007 for 7.17.0,
+                                    reused in Dec 2011 for 7.24.0]*/
+  CURLE_FTP_WEIRD_PASV_REPLY,    /* 13 */
+  CURLE_FTP_WEIRD_227_FORMAT,    /* 14 */
+  CURLE_FTP_CANT_GET_HOST,       /* 15 */
+  CURLE_HTTP2,                   /* 16 - A problem in the http2 framing layer.
+                                    [was obsoleted in August 2007 for 7.17.0,
+                                    reused in July 2014 for 7.38.0] */
+  CURLE_FTP_COULDNT_SET_TYPE,    /* 17 */
+  CURLE_PARTIAL_FILE,            /* 18 */
+  CURLE_FTP_COULDNT_RETR_FILE,   /* 19 */
+  CURLE_OBSOLETE20,              /* 20 - NOT USED */
+  CURLE_QUOTE_ERROR,             /* 21 - quote command failure */
+  CURLE_HTTP_RETURNED_ERROR,     /* 22 */
+  CURLE_WRITE_ERROR,             /* 23 */
+  CURLE_OBSOLETE24,              /* 24 - NOT USED */
+  CURLE_UPLOAD_FAILED,           /* 25 - failed upload "command" */
+  CURLE_READ_ERROR,              /* 26 - couldn't open/read from file */
+  CURLE_OUT_OF_MEMORY,           /* 27 */
+  /* Note: CURLE_OUT_OF_MEMORY may sometimes indicate a conversion error
+           instead of a memory allocation error if CURL_DOES_CONVERSIONS
+           is defined
+  */
+  CURLE_OPERATION_TIMEDOUT,      /* 28 - the timeout time was reached */
+  CURLE_OBSOLETE29,              /* 29 - NOT USED */
+  CURLE_FTP_PORT_FAILED,         /* 30 - FTP PORT operation failed */
+  CURLE_FTP_COULDNT_USE_REST,    /* 31 - the REST command failed */
+  CURLE_OBSOLETE32,              /* 32 - NOT USED */
+  CURLE_RANGE_ERROR,             /* 33 - RANGE "command" didn't work */
+  CURLE_HTTP_POST_ERROR,         /* 34 */
+  CURLE_SSL_CONNECT_ERROR,       /* 35 - wrong when connecting with SSL */
+  CURLE_BAD_DOWNLOAD_RESUME,     /* 36 - couldn't resume download */
+  CURLE_FILE_COULDNT_READ_FILE,  /* 37 */
+  CURLE_LDAP_CANNOT_BIND,        /* 38 */
+  CURLE_LDAP_SEARCH_FAILED,      /* 39 */
+  CURLE_OBSOLETE40,              /* 40 - NOT USED */
+  CURLE_FUNCTION_NOT_FOUND,      /* 41 */
+  CURLE_ABORTED_BY_CALLBACK,     /* 42 */
+  CURLE_BAD_FUNCTION_ARGUMENT,   /* 43 */
+  CURLE_OBSOLETE44,              /* 44 - NOT USED */
+  CURLE_INTERFACE_FAILED,        /* 45 - CURLOPT_INTERFACE failed */
+  CURLE_OBSOLETE46,              /* 46 - NOT USED */
+  CURLE_TOO_MANY_REDIRECTS ,     /* 47 - catch endless re-direct loops */
+  CURLE_UNKNOWN_OPTION,          /* 48 - User specified an unknown option */
+  CURLE_TELNET_OPTION_SYNTAX ,   /* 49 - Malformed telnet option */
+  CURLE_OBSOLETE50,              /* 50 - NOT USED */
+  CURLE_PEER_FAILED_VERIFICATION, /* 51 - peer's certificate or fingerprint
+                                     wasn't verified fine */
+  CURLE_GOT_NOTHING,             /* 52 - when this is a specific error */
+  CURLE_SSL_ENGINE_NOTFOUND,     /* 53 - SSL crypto engine not found */
+  CURLE_SSL_ENGINE_SETFAILED,    /* 54 - can not set SSL crypto engine as
+                                    default */
+  CURLE_SEND_ERROR,              /* 55 - failed sending network data */
+  CURLE_RECV_ERROR,              /* 56 - failure in receiving network data */
+  CURLE_OBSOLETE57,              /* 57 - NOT IN USE */
+  CURLE_SSL_CERTPROBLEM,         /* 58 - problem with the local certificate */
+  CURLE_SSL_CIPHER,              /* 59 - couldn't use specified cipher */
+  CURLE_SSL_CACERT,              /* 60 - problem with the CA cert (path?) */
+  CURLE_BAD_CONTENT_ENCODING,    /* 61 - Unrecognized/bad encoding */
+  CURLE_LDAP_INVALID_URL,        /* 62 - Invalid LDAP URL */
+  CURLE_FILESIZE_EXCEEDED,       /* 63 - Maximum file size exceeded */
+  CURLE_USE_SSL_FAILED,          /* 64 - Requested FTP SSL level failed */
+  CURLE_SEND_FAIL_REWIND,        /* 65 - Sending the data requires a rewind
+                                    that failed */
+  CURLE_SSL_ENGINE_INITFAILED,   /* 66 - failed to initialise ENGINE */
+  CURLE_LOGIN_DENIED,            /* 67 - user, password or similar was not
+                                    accepted and we failed to login */
+  CURLE_TFTP_NOTFOUND,           /* 68 - file not found on server */
+  CURLE_TFTP_PERM,               /* 69 - permission problem on server */
+  CURLE_REMOTE_DISK_FULL,        /* 70 - out of disk space on server */
+  CURLE_TFTP_ILLEGAL,            /* 71 - Illegal TFTP operation */
+  CURLE_TFTP_UNKNOWNID,          /* 72 - Unknown transfer ID */
+  CURLE_REMOTE_FILE_EXISTS,      /* 73 - File already exists */
+  CURLE_TFTP_NOSUCHUSER,         /* 74 - No such user */
+  CURLE_CONV_FAILED,             /* 75 - conversion failed */
+  CURLE_CONV_REQD,               /* 76 - caller must register conversion
+                                    callbacks using curl_easy_setopt options
+                                    CURLOPT_CONV_FROM_NETWORK_FUNCTION,
+                                    CURLOPT_CONV_TO_NETWORK_FUNCTION, and
+                                    CURLOPT_CONV_FROM_UTF8_FUNCTION */
+  CURLE_SSL_CACERT_BADFILE,      /* 77 - could not load CACERT file, missing
+                                    or wrong format */
+  CURLE_REMOTE_FILE_NOT_FOUND,   /* 78 - remote file not found */
+  CURLE_SSH,                     /* 79 - error from the SSH layer, somewhat
+                                    generic so the error message will be of
+                                    interest when this has happened */
+
+  CURLE_SSL_SHUTDOWN_FAILED,     /* 80 - Failed to shut down the SSL
+                                    connection */
+  CURLE_AGAIN,                   /* 81 - socket is not ready for send/recv,
+                                    wait till it's ready and try again (Added
+                                    in 7.18.2) */
+  CURLE_SSL_CRL_BADFILE,         /* 82 - could not load CRL file, missing or
+                                    wrong format (Added in 7.19.0) */
+  CURLE_SSL_ISSUER_ERROR,        /* 83 - Issuer check failed.  (Added in
+                                    7.19.0) */
+  CURLE_FTP_PRET_FAILED,         /* 84 - a PRET command failed */
+  CURLE_RTSP_CSEQ_ERROR,         /* 85 - mismatch of RTSP CSeq numbers */
+  CURLE_RTSP_SESSION_ERROR,      /* 86 - mismatch of RTSP Session Ids */
+  CURLE_FTP_BAD_FILE_LIST,       /* 87 - unable to parse FTP file list */
+  CURLE_CHUNK_FAILED,            /* 88 - chunk callback reported error */
+  CURLE_NO_CONNECTION_AVAILABLE, /* 89 - No connection available, the
+                                    session will be queued */
+  CURLE_SSL_PINNEDPUBKEYNOTMATCH, /* 90 - specified pinned public key did not
+                                     match */

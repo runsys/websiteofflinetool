@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/WebsiteOfflineTool"/>
+    <qresource prefix="/">
+        <file>websiteofflinetool_zhcn.qm</file>
+        <file>translate.map</file>
+        <file>help_cn.txt</file>
+        <file>help_en.txt</file>
+    </qresource>
+</RCC>

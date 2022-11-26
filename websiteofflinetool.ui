@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WebsiteOfflineToolClass</class>
+ <widget class="QMainWindow" name="WebsiteOfflineToolClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>765</width>
+    <height>517</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>WebsiteOfflineTool</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="startbtn">
+      <property name="text">
+       <string>开始抓取选择的网站</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="AutoEditTreeView" name="tasklisttree">
+      <property name="toolTip">
+       <string>首页是第一个可以定义导入的URL文件,格式每行一个;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buybtn">
+      <property name="text">
+       <string>购买</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="regcodeedit">
+      <property name="placeholderText">
+       <string>注册码</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="regbtn">
+      <property name="text">
+       <string>注册</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="regcodelab">
+      <property name="text">
+       <string>不注册有5分钟试用限制</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>765</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Function</string>
+    </property>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionMd5_filename_to_url_filename"/>
+    <addaction name="actionMd5_filename_to_url_file_name_without_relink"/>
+    <addaction name="actionHtml_title_to_filename"/>
+    <addaction name="actionUrl_filename_to_url_md5_filename"/>
+    <addaction name="actionConvert_to_content_dispositon_file_name"/>
+    <addaction name="actionRelinkAllFile"/>
+    <addaction name="actionDelete_if_no_exist_url"/>
+    <addaction name="actionSave_data_convert_to_rocksdb"/>
+    <addaction name="actionRocksdb_convert_to_file_db"/>
+    <addaction name="actionReset_no_filedata_url_state"/>
+    <addaction name="actionMin_file_dir_to_rocksdb"/>
+    <addaction name="actionDelete_min_file_directory"/>
+    <addaction name="actionUpdate_urlstate_by_find_content"/>
+    <addaction name="actionExport_title_by_url_regex"/>
+    <addaction name="actionName_list_to_utf8_url_list"/>
+    <addaction name="actionDelete_when_urlstate_is_6"/>
+    <addaction name="actionAddtime_from_html_regex"/>
+    <addaction name="separator"/>
+    <addaction name="actionDownload_a_test_url_to_test_html"/>
+    <addaction name="separator"/>
+    <addaction name="actionLebb_cc"/>
+   </widget>
+   <widget class="QMenu" name="menuLanguage">
+    <property name="title">
+     <string>Language</string>
+    </property>
+    <addaction name="actionChinese"/>
+    <addaction name="actionEnglish"/>
+   </widget>
+   <addaction name="menuHelp"/>
+   <addaction name="menuLanguage"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionLebb_cc">
+   <property name="text">
+    <string>lebb.cc home</string>
+   </property>
+  </action>
+  <action name="actionMd5_filename_to_url_filename">
+   <property name="text">
+    <string>md5 filename convert to url filename with relink</string>
+   </property>
+  </action>
+  <action name="actionHtml_title_to_filename">
+   <property name="text">
+    <string>md5 filename convert to html title filename</string>
+   </property>
+  </action>
+  <action name="actionDelete_if_no_exist_url">
+   <property name="text">
+    <string>delete if no exist url</string>
+   </property>
+  </action>
+  <action name="actionRelinkAllFile">
+   <property name="text">
+    <string>relink all file to local</string>
+   </property>
+  </action>
+  <action name="actionSave_data_convert_to_rocksdb">
+   <property name="text">
+    <string>save data convert to rocksdb</string>
+   </property>
+  </action>
+  <action name="actionReset_no_filedata_url_state">
+   <property name="text">
+    <string>reset no filedata url state</string>
+   </property>
+  </action>
+  <action name="actionMin_file_dir_to_rocksdb">
+   <property name="text">
+    <string>min file dir to rocksdb</string>
+   </property>
+  </action>
+  <action name="actionDelete_min_file_directory">
+   <property name="text">
+    <string>delete min file directory</string>
+   </property>
+  </action>
+  <action name="actionRocksdb_convert_to_file_db">
+   <property name="text">
+    <string>rocksdb convert to file db</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save All</string>
+   </property>
+  </action>
+  <action name="actionConvert_to_content_dispositon_file_name">
+   <property name="text">
+    <string>convert to content dispositon file name</string>
+   </property>
+  </action>
+  <action name="actionDownload_a_test_url_to_test_html">
+   <property name="text">
+    <string>download a test url to test.html</string>
+   </property>
+  </action>
+  <action name="actionUpdate_urlstate_by_find_content">
+   <property name="text">
+    <string>update urlstate by find content</string>
+   </property>
+  </action>
+  <action name="actionFile_size_zero_update_urlstate_to_0">
+   <property name="text">
+    <string>file size zero update urlstate to 0(no download)</string>
+   </property>
+  </action>
+  <action name="actionDelete_when_urlstate_is_6">
+   <property name="text">
+    <string>urlstate 6(size not equal) delete file and set urlstate to 0</string>
+   </property>
+  </action>
+  <action name="actionExport_title_by_url_regex">
+   <property name="text">
+    <string>export_title_by_url_regex</string>
+   </property>
+  </action>
+  <action name="actionName_list_to_utf8_url_list">
+   <property name="text">
+    <string>name list to utf8 url list</string>
+   </property>
+  </action>
+  <action name="actionAddtime_from_html_regex">
+   <property name="text">
+    <string>addtime from html regex</string>
+   </property>
+  </action>
+  <action name="actionMd5_filename_to_url_file_name_without_relink">
+   <property name="text">
+    <string>md5 filename to url file name without relink</string>
+   </property>
+  </action>
+  <action name="actionUrl_filename_to_url_md5_filename">
+   <property name="text">
+    <string>url filename to url md5 filename</string>
+   </property>
+  </action>
+  <action name="actionChinese">
+   <property name="text">
+    <string>Chinese</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>AutoEditTreeView</class>
+   <extends>QTreeView</extends>
+   <header>AutoEditTreeView.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

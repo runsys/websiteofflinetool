@@ -1,0 +1,51 @@
+网址	website
+本地目录	local directory
+包含下载路径	regex for download include path
+排除下载路径	regex for download exclude path
+线程数	thread count
+状态	state
+等待秒	waiting second
+连续下载秒	continue downloading second
+更新链接匹配	regex for refresh url
+更新链接秒	interval for continue download URL
+下链接间隔毫秒	interval for download URL rest
+UserAgent	UserAgent
+登录链接	login link
+登录post数据	ligin post data
+登录成功匹配	regex for login success
+URL匹配后缀	suffix for include url
+重链接到本地	relink to local when 1
+文件存在不下载URL匹配	regex for no download file exists URL
+存储到rockdb	save to rockdb(empty save as alone file;1save to rockdb;)
+不存在头匹配	head match when don't exists
+不存在页匹配	page match when don't exists
+页面超时	page timeout
+URL提取正则表达式1	URL extract regex 1
+组合URL正则替换式1	group URL regex replacement 1
+组合URL时间替换式1	group URL time replacement 1
+组合URL标题替换式1	group URL title replacement 1
+提取后任务状态值1	task state after extract 1
+URL提取正则表达式2	URL extract regex 2
+组合URL正则替换式2	group URL regex replacement 2
+组合URL时间替换式2	group URL time replacement 2
+组合URL标题替换式2	group URL title replacement 2
+提取后任务状态值2	task state after extract 2
+PageGate服务器列表	Page Gate server list
+PageGate抓URL匹配1	regex for match Page Gate extract URL 1
+PageGateScript1	Page Gate Script 1
+PageGate抓URL匹配2	regex for match Page Gate extract URL 2
+PageGateScript2 Page Gate Script 2
+ContentDisposition排除匹配  URL match for ContentDisposition exclude
+页面完整URL匹配1	regex for page completeness URL 1
+页面完整正则1	regex for completeness of url's content 1
+页面完整URL匹配2	regex for page completeness URL 2
+页面完整正则2	regex for completeness of url's content 2
+多hostURL匹配	regex for multi host URL
+多host替换表达式	multi replacement for rand host
+多host URL头不满足匹配	regex for none multi host URL
+大文件存储(1分段获取;2连续写文件;)	big file download type(1 for segment save,2 for file buffer save)
+状态值用URL正则表达式(URL匹配正则式`任务状态值;...)	state code by regex(regex`state code;...)
+抓URL正则规则(URL提取正则表达式`URL替换式`时间替换式`标题替换式`任务状态值;...)	spider url regex rule(segment regex`url replacement`time replacement`titl replacement`state code;...)
+自动抓取连接方式(1禁止;2链接到本地;3无获取则链接到本地;4链接到网络;5无获取则链接到网络)	auto url type(1 for forbid auto;2 for to local;3 for tolocal auto;4 for to net;5 for to net auto)
+URL匹配则替换(正则表达式`替换式;...)	replace for url(regex`replacement;...)
+内存下载文件大小	max size limit for memory download
